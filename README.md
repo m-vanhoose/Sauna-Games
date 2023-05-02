@@ -1,96 +1,26 @@
-# Module 14 Mini-Project: Crowdfunding App
+## Suana Game Store
 
-In this mini-project, you will work with a group to build a full-stack crowdfunding app using Node.js, Express.js, Sequelize, Handlebars.js, and MVC architecture.
+# Description
 
-## User Stories
+Welcome to our digital game store Sauna, where you can browse and discover new games to play! Our website aims to provide a simple and user-friendly platform for gamers to find and learn about the latest and greatest games. Our collection features a variety of genres, from action-packed shooters to immersive role-playing games, all in one convenient place.
 
-* As a user, I want to see a list of current projects seeking funding.
+Our mission is to help you find your next favorite game and make the process as easy as possible. We understand how overwhelming it can be to search through countless websites and reviews, which is why we have created a curated selection of games that we believe are worth your time. Our website provides detailed information on each game, including a summary, screenshots, and system requirements, so you can make an informed decision before making a purchase.
 
-* As a user, I want to be able to create an account.
+## Features
 
-* As a registered user, I want to post my own projects to ask for funding.
+Browse and search for games
+View details about each game, including description, genre, and release date.
+Create an account and log in to access additional features
+Save favorite games to a personal profile
+Save games to a Wishlist shopping cart
+And more!
 
-### Acceptance Criteria
+## Usage
 
-* It's done when the `/` homepage route renders a list of all projects from the database.
+This project is designed to help users discover new games and make informed decisions about which ones to play. Whether you're a casual gamer or a hardcore enthusiast, this platform provides a comprehensive resource for all your gaming needs.
 
-* It's done when the `/project/:id` route renders an individual project's details based on the route parameter id.
 
-* It's done when the `/login` route renders a form to log in and a form to create a new account.
 
-* It's done when an existing user can enter their credentials on the login page to create a session on the server.
 
-* It's done when a new user can create an account on the login page and then be immediately logged in with a session.
 
-* It's done when the `/profile` route renders the logged-in user's projects and a form to create a new project.
 
-* It's done when only a logged in user can visit the `/profile` route.
-
-* It's done when a logged in user is redirected to `/profile` when they try to visit `/login` again.
-
-* It's done when a user on the profile page can use the form to create a new project in the database.
-
-* It's done when a user on the profile page can select a "Delete" button to remove their project from the database.
-
-* It's done when a logged-in user can select a "Logout" button to remove their session.
-
-* It's done when the session for a logged-in user expires after a set time.
-
-* It's done when the API routes to create and delete posts are protected from non logged-in users.
-
-* It's done when the code is organized using MVC architecture.
-
-* It's done when the views are rendered with Handlebars.js templates.
-
-## Specifications 
-
-* The database models have the following fields and associations:
-
-  * `User`
-
-    * `id`: primary key
-
-    * `name`
-
-    * `email`
-
-    * `password`
-
-  * `Project`
-
-    * `id`: primary key
-
-    * `name`
-
-    * `description`
-
-    * `date_created`
-
-    * `needed_funding`
-
-    * `user_id`: foreign key that references `User.id`
-
-  * Users have many projects, and projects belong to a user.
-
-    * If a user is deleted, all associated projects are also deleted.
-
----
-
-## 💡 Hints
-
-* What tools can you use to test the existing API routes if you don't yet have a front end?
-
-* Where would you place the client-side JavaScript for capturing form data?
-
-* How can middleware help protect routes from non logged-in users?
-
-* How can Handlebars.js helpers (both built-in and custom) be used to render the desired results?
-
-## 🏆 Bonus
-
-If you have completed this activity, work through the following challenge with your partner to further your knowledge:
-
-* Add an `/edit/:id` route for logged in users to update their projects' details. Then deploy the app to Heroku!
-
----
-© 2023 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
