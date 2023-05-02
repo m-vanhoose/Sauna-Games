@@ -13,7 +13,7 @@ const seedDatabase = async () => {
   });
 
   for (const game of gameData) {
-    await Games.create({
+    await Game.create({
       ...game,
       user_id: users[Math.floor(Math.random() * users.length)].id,
     });
