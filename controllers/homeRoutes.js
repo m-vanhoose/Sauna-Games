@@ -6,6 +6,14 @@ router.get('/', async (req, res) => {
   res.render("login")
 });
 
+
+router.get('/catalog', async (req, res) => {
+  const test= 'Hello World'
+  res.render("catalog", {testKey: test})
+
+});
+
+
 router.get('/game/:id', async (req, res) => {
   try {
     const gameData = await Game.findByPk(req.params.id, {
