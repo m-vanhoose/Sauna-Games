@@ -1,6 +1,6 @@
 #gamecard {
-  border-radius: 100px !important;
-  border-width: 50px !important;
-  border-color: black !important;
+  border-radius: 10px;
+  border-width: 2px;
+  border-color: black;
   border-style:solid;
 }

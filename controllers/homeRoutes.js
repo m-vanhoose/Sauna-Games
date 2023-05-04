@@ -7,7 +7,7 @@ router.get('/', async (req, res) => {
 });
 
 router.get('/homepage', async (req, res) => {
-  res.render("homepage")
+  res.render("catalog")
 });
 
 router.get('/game/:id', async (req, res) => {
