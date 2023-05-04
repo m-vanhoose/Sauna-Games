@@ -6,6 +6,10 @@ router.get('/', async (req, res) => {
   res.render("login")
 });
 
+router.get('/homepage', async (req, res) => {
+  res.render("homepage")
+});
+
 router.get('/game/:id', async (req, res) => {
   try {
     const gameData = await Game.findByPk(req.params.id, {
