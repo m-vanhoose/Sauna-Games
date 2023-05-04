@@ -1,52 +1,43 @@
 [
   {
-    "title": "",
-    "description": "",
-    "release_date": ""
+    "title": "Duck Hunt",
+    "description": "Hunting"
+  },
+  {
+    "title": "Ninja Turtles",
+    "description": "Adventure, Action"
+   
+  },
+  {
+    "title": "Mortal Kombat",
+    "description": "Combat, Adventure"
   },
   {
     "title": "",
-    "description": "",
-    "release_date": ""
+    "description": ""
   },
   {
     "title": "",
-    "description": "",
-    "release_date": ""
+    "description": ""
   },
   {
     "title": "",
-    "description": "",
-    "release_date": ""
+    "description": ""
   },
   {
     "title": "",
-    "description": "",
-    "release_date": ""
+    "description": ""
   },
   {
     "title": "",
-    "description": "",
-    "release_date": ""
+    "description": ""
   },
   {
     "title": "",
-    "description": "",
-    "release_date": ""
+    "description": ""
   },
   {
     "title": "",
-    "description": "",
-    "release_date": ""
-  },
-  {
-    "title": "",
-    "description": "",
-    "release_date": ""
-  },
-  {
-    "title": "",
-    "description": "",
-    "release_date": ""
+    "description": ""
   }
 ]

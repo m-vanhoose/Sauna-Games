@@ -8,8 +8,18 @@ router.get('/', async (req, res) => {
 
 
 router.get('/catalog', async (req, res) => {
-  const test= 'Hello World'
-  res.render("catalog", {testKey: test})
+  try {
+    const gameData = await Game.findAll();
+    
+      const games = gameData.map((game) => game.get({plain:true}))
+      res.render("catalog", { games})
+    
+    
+
+  } catch (error) {
+    res.render("catalog", {error})
+  }
+  
 
 });
 

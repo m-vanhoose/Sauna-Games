@@ -1,24 +1,24 @@
 <h1>Catalog Page</h1>
 
-{{#if game.length}}
+{{#if games.length}}
 
 <div>
     <div> 
-        {{#each game as |games| }}
+        {{#each games as |game| }}
     </div>
     <div>
-        {{games.title}}
+        {{game.title}}
     </div>
     <div>
-        {{games.description}}
+        {{game.description}}
     </div>
     <div>
-        {{games.release_date}}
+        {{game.release_date}}
     </div>
     {{/each}}
     {{else}}
-    <p> Game not in available. </p>
-    <p>{{testKey}}</p>
+    <p> Coming soon! </p>
+    
 
 </div>
 
