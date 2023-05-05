@@ -1,24 +1,21 @@
 <h1>Catalog Page</h1>
 
-{{#if game.length}}
+{{#if games.length}}
 
-<div>
-    <div> 
-        {{#each game as |games| }}
-    </div>
-    <div>
-        {{games.title}}
-    </div>
-    <div>
-        {{games.description}}
-    </div>
-    <div>
-        {{games.release_date}}
-    </div>
+<div class="columns is-multiline">
+    {{#each games as |game| }}    
+    <div class="column is-half" id="game-card">
+        {{game.title}}
+        {{game.description}}
+         {{game.release_date}} 
+    </div >
+    
     {{/each}}
     {{else}}
-    <p> Game not in available. </p>
-
+    <p> Coming soon! </p>
 </div>
 
 {{/if}}
+
+
+    
