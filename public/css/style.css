@@ -1,24 +1,23 @@
-header, .project:not(:last-child) {
-  border-bottom: 1px solid #ccc;
+#header {
+
 }
 
-.no-button {
-  background: none;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  color: #1b89bc;
-  text-decoration: none;
-  font-size: 100%;
+#title {
+  float: left;
 }
 
-.no-button:hover {
-  color: #065b83;
-  text-decoration: underline;
+#navbutton1 {
+  float: right;
+  margin-right: 20px;
 }
 
-.dollar-amount {
-  color: #056605;
-  font-weight: bold;
-  margin-left: -5px;
+#navbutton2 {
+  float: right;
+}
+
+#gamecard {
+  border-radius: 10px;
+  border-width: 2px;
+  border-color: black;
+  border-style:solid;
 }
