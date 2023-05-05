@@ -24,7 +24,7 @@ Game.init(
       defaultValue: DataTypes.NOW,
     },
     price: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false,
     }
   },
