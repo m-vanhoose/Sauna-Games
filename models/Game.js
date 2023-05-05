@@ -23,6 +23,10 @@ Game.init(
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
+    price: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    }
   },
   {
     sequelize,
