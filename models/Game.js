@@ -20,7 +20,7 @@ Game.init(
     },
     release_date: {
       type: DataTypes.DATE,
-      allowNull: false,
+      allowNull: true,
       defaultValue: DataTypes.NOW,
     },
   },

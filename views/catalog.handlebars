@@ -2,24 +2,20 @@
 
 {{#if games.length}}
 
-<div>
-    <div> 
-        {{#each games as |game| }}
-    </div>
-    <div>
+<div class="columns is-multiline">
+    {{#each games as |game| }}    
+    <div class="column is-half" id="game-card">
         {{game.title}}
-    </div>
-    <div>
         {{game.description}}
-    </div>
-    <div>
-        {{game.release_date}}
-    </div>
+         {{game.release_date}} 
+    </div >
+    
     {{/each}}
     {{else}}
     <p> Coming soon! </p>
-    
-
 </div>
 
 {{/if}}
+
+
+    
