@@ -3,8 +3,8 @@ const express = require('express');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
 const routes = require('./controllers');
-const passport = require('passport')
-const GoogleStragety = require( 'passport-google-oauth2' ).Stragety;
+// const passport = require('passport')
+// const GoogleStragety = require( 'passport-google-oauth2' ).Stragety;
 const helpers = require('./utils/helpers');
 
 const sequelize = require('./config/connection');
@@ -36,8 +36,8 @@ const sess = {
 
 app.use(session(sess));
 
-app.get(passport.initialize ());
-app.use(passport.session());
+// app.get(passport.initialize ());
+// app.use(passport.session());
 
 // Inform Express.js on which template engine to use
 app.engine('handlebars', hbs.engine);
@@ -47,26 +47,26 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.post('/login/password',
-  passport.authenticate('local', { failureRedirect: '/login', failureMessage: true }),
-  function(req, res) {
-    res.redirect('/~' + req.user.username);
-  });
+// app.post('/login/password',
+//   passport.authenticate('local', { failureRedirect: '/login', failureMessage: true }),
+//   function(req, res) {
+//     res.redirect('/~' + req.user.username);
+//   });
 
-  app.get('/auth/google',
-  passport.authenticate('google', { scope: ['profile'] }));
+//   app.get('/auth/google',
+//   passport.authenticate('google', { scope: ['profile'] }));
 
-app.get('/auth/google/callback', 
-  passport.authenticate('google', { failureRedirect: '/login' }),
-  function(req, res) {
-    // Successful authentication, redirect home.
-    res.redirect('/');
-  });
+// app.get('/auth/google/callback', 
+//   passport.authenticate('google', { failureRedirect: '/login' }),
+//   function(req, res) {
+//     // Successful authentication, redirect home.
+//     res.redirect('/');
+//   });
 
-  app.use('/auth/logout', (req,res) => {
-    req.session.destroy();
-    res.send("See you again!!");
-  })
+//   app.use('/auth/logout', (req,res) => {
+//     req.session.destroy();
+//     res.send("See you again!!");
+//   })
 
   
 app.use(routes);

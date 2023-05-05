@@ -7,29 +7,29 @@ const withAuth = (req, res, next) => {
   }
 };
 
-const passport = require('passport');
-require('dotenv').config()
-const GoogleStrategy = require( 'passport-google-oauth2' ).Strategy;
+// const passport = require('passport');
+// require('dotenv').config()
+// const GoogleStrategy = require( 'passport-google-oauth2' ).Strategy;
 
 
-passport.use(new GoogleStrategy ({
-  clientID: process.env.GOOGLE_CLIENT_ID,
-  clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-  callbackURL: "http://localhost:3001/auth/google/callback",
-  passReqToCallback: true
-},
+// passport.use(new GoogleStrategy ({
+//   clientID: process.env.GOOGLE_CLIENT_ID,
+//   clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+//   callbackURL: "http://localhost:3001/auth/google/callback",
+//   passReqToCallback: true
+//},
 
-function(req, acessToken, refreshToken, profile, done) {
-  done(null, profile);
-  })
-);
+// function(req, acessToken, refreshToken, profile, done) {
+//   done(null, profile);
+//   })
+// );
 
-passport.serializeUser((user, done) => {
-  done(null, user)
-});
+// passport.serializeUser((user, done) => {
+//   done(null, user)
+// });
 
-passport.deserializeUser((user, done) => {
-  done(null, user)
-})
-module.exports = { withAuth, GoogleStrategy };
+// passport.deserializeUser((user, done) => {
+//   done(null, user)
+// })
+module.exports =  withAuth ;
 
