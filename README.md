@@ -9,7 +9,7 @@ Our mission is to help you find your next favorite game and make the process as 
 ## Features
 
 Browse and search for games
-View details about each game, including description, genre, and release date.
+View details about each game, including description, genre, and release date
 Create an account and log in to access additional features
 Save favorite games to a personal profile
 Save games to a Wishlist shopping cart
