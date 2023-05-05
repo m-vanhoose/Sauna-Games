@@ -1,3 +1,20 @@
+#header {
+
+}
+
+#title {
+  float: left;
+}
+
+#navbutton1 {
+  float: right;
+  margin-right: 20px;
+}
+
+#navbutton2 {
+  float: right;
+}
+
 #gamecard {
   border-radius: 10px;
   border-width: 2px;
