@@ -1,6 +1,23 @@
-#gamecard {
-  border-radius: 10px;
-  border-width: 2px;
-  border-color: black;
-  border-style:solid;
+
+
+body {
+  background-color: #3D3D3D;
 }
+
+.h1 {
+  font-size: 80px;
+  color: #30D5C8;
+  margin-bottom: 20px;
+}
+
+#game-card {
+  border: 1px solid white;
+  padding: 10px;
+  color: #FCFEDA;
+}
+
+.game-title {
+  color: #30D5C8;
+  font-size: 35px;
+}
+

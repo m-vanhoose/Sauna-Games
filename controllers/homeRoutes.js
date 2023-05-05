@@ -14,11 +14,14 @@ router.get('/homepage', async (req, res) => {
 router.get('/catalog', async (req, res) => {
   try {
     const gameData = await Game.findAll();
-    
-      const games = gameData.map((game) => game.get({plain:true}))
-      res.render("catalog", { games})
-    
-    
+    const games = gameData.map((game) => game.get({plain:true}))
+    console.log('GAMES', games)
+    // we want to change the release date value. originally it is a datetime stamp value. but it should be more user friendly to read 
+    let newDates = games.map((game) => game.release_date)
+    // keep just the first 10 characters of each date
+    //newDates = newDates.map((date) => date.slice(0,10))
+    console.log('NEW DATES', newDates)
+    res.render("catalog", { games})
 
   } catch (error) {
     res.render("catalog", {error})
