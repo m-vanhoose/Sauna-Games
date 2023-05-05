@@ -21,6 +21,7 @@ Game.init(
     release_date: {
       type: DataTypes.DATE,
       allowNull: false,
+      defaultValue: DataTypes.NOW,
     },
     price: {
       type: DataTypes.INTEGER,
