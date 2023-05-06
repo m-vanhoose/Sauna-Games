@@ -16,9 +16,9 @@ const PORT = process.env.PORT || 3001;
 // Set up Handlebars.js engine with custom helpers
 const hbs = exphbs.create({ helpers });
 
-function isLoggedIn(req,res,next){
-  req.user ? next() : res.sendStatus(401);
-}
+// function isLoggedIn(req,res,next){
+//   req.user ? next() : res.sendStatus(401);
+// }
 const sess = {
   secret: 'Super secret secret',
   cookie: {

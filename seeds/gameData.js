@@ -1,7 +1,6 @@
 const Game = require('../models/Game')
 
 const gameData = [
-  
     {
       "title": "Elden Ring",
       "description": "THE NEW FANTASY ACTION RPG. Rise, Tarnished, and be guided by grace to brandish the power of the Elden Ring and become an Elden Lord in the Lands Between.",
@@ -173,7 +172,7 @@ const gameData = [
     {
       "title": "Minecraft",
       "description": "In Minecraft, players explore a blocky, procedurally generated, three-dimensional world with virtually infinite terrain and may discover and extract raw materials, craft tools and items, and build structures, earthworks, and machines.",
-      "release_date": "18 November 2011",
+      "release_date": "Nov 18, 2011",
       "price": "$29.99"
     },
     {
