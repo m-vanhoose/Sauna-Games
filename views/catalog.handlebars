@@ -4,10 +4,9 @@
 
 <div class="columns is-multiline">
     {{#each games as |game| }}    
-    <div class="column is-half" id="game-card">
+    <div href=`/game/${game.id}` class="column is-half" id="game-card">
         {{game.title}}
-        {{game.description}}
-         {{game.release_date}} 
+        {{game.price}}
     </div >
 {{!-- add an a tag with a link to <a href=`/game/${game.id}`></a> --}}
     {{/each}}

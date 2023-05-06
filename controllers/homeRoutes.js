@@ -10,15 +10,15 @@ router.get('/homepage', async (req, res) => {
   res.render("catalog")
 });
 
-router.get('/profile', async (req, res) => {
-  res.render("profile")
+router.get('/library', async (req, res) => {
+  res.render("library")
 });
 
-router.get('/catalog', async (req, res) => {
+router.get('/homepage', async (req, res) => {
   try {
     const gameData = await Game.findAll();
     const games = gameData.map((game) => game.get({plain:true}))
-    res.render("catalog", { games})}
+    res.render("catalog", {games})}
       catch (error) {
       res.render("catalog", {error})}
 });
