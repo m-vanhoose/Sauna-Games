@@ -1,1 +1,39 @@
-<h2> Saved Games </h2>
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sauna Games - Saved Game Library</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="columns">
+      <div class="column is-two-thirds">
+        <h2>Saved Game Library</h2>
+
+        {{#if games.length}}
+        <div class="columns is-multiline">
+          {{#each games as |game|}}
+          <div class="column is-half" id="game-card">
+            <h3>{{game.title}}</h3>
+            <p>{{game.description}}</p>
+            <p>Release Date: {{game.release_date}}</p>
+          </div>
+          {{/each}}
+        </div>
+        {{else}}
+        <p>No saved games found.</p>
+        {{/if}}
+      </div>
+      <div class="column">
+        <button id="profile-button">Profile</button>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
