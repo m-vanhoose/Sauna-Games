@@ -16,7 +16,7 @@ Game.init(
       allowNull: false,
     },
     description: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
     },
     release_date: {
       type: DataTypes.DATE,
@@ -24,7 +24,7 @@ Game.init(
       defaultValue: DataTypes.NOW,
     },
     price: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false,
     }
   },
