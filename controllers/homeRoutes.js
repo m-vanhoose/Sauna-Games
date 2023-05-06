@@ -10,45 +10,49 @@ router.get('/homepage', async (req, res) => {
   res.render("catalog")
 });
 
+router.get('/profile', async (req, res) => {
+  res.render("profile")
+});
 
 router.get('/catalog', async (req, res) => {
   try {
     const gameData = await Game.findAll();
-    
-      const games = gameData.map((game) => game.get({plain:true}))
-      res.render("catalog", { games})
-    
-    
-
-  } catch (error) {
-    res.render("catalog", {error})
-  }
-  
-
+    const games = gameData.map((game) => game.get({plain:true}))
+    res.render("catalog", { games})}
+      catch (error) {
+      res.render("catalog", {error})}
 });
 
+// router.get('/game/:id', async (req, res) => {
+//   try {
+//     const gameData = await Game.findByPk(req.params.id, {
+//       include: [
+//         {
+//           model: User,
+//           attributes: ['name'],
+//         },
+//       ],
+//     });
+
+//     const game = gameData.get({ plain: true });
+
+//     res.render('game', {
+//       ...game,
+//       logged_in: req.session.logged_in
+//     });
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
 
 router.get('/game/:id', async (req, res) => {
-  try {
-    const gameData = await Game.findByPk(req.params.id, {
-      include: [
-        {
-          model: User,
-          attributes: ['name'],
-        },
-      ],
-    });
+  const gameData = await Game.findByPk(req.params.id);
+  const game = gameData.get({ plain: true });
+  res.render('game', {
+    game
+  })
+})
 
-    const game = gameData.get({ plain: true });
-
-    res.render('game', {
-      ...game,
-      logged_in: req.session.logged_in
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
 
 // Use withAuth middleware to prevent access to route
 router.get('/profile', withAuth, async (req, res) => {
@@ -79,5 +83,6 @@ router.get('/login', (req, res) => {
 
   res.render('login');
 });
+
 
 module.exports = router;
