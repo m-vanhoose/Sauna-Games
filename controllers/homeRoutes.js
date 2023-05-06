@@ -27,6 +27,57 @@ router.get('/catalog', async (req, res) => {
 
 });
 
+router.get('/library', withAuth, async (req, res) => {
+  try {
+    const user = await User.findByPk(req.session.user_id, {
+      include: [{ model: Game }],
+    });
+
+    if (!user) {
+      res.status(404).json({ message: 'User not found' });
+      return;
+    }
+
+    const savedGames = user.Games.map((game) => game.get({ plain: true }));
+
+    res.render('library', {
+      games: savedGames,
+      logged_in: true
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+
+router.post('/library', withAuth, async (req, res) => {
+  try {
+    const { game_id } = req.body;
+
+    const user = await User.findByPk(req.session.user_id);
+
+    if (!user) {
+      res.status(404).json({ message: 'User not found' });
+      return;
+    }
+
+    const savedGame = await user.getGames({
+      where: { id: game_id },
+    });
+
+    if (savedGame.length) {
+      res.status(400).json({ message: 'Game already saved' });
+      return;
+    }
+
+    await user.addGame(game_id);
+
+    res.status(200).json({ message: 'Game saved successfully' });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 
 router.get('/game/:id', async (req, res) => {
   try {
@@ -50,10 +101,10 @@ router.get('/game/:id', async (req, res) => {
   }
 });
 
-// Use withAuth middleware to prevent access to route
+
 router.get('/profile', withAuth, async (req, res) => {
   try {
-    // Find the logged in user based on the session ID
+    
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
       include: [{ model: Game }],
