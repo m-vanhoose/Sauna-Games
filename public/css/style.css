@@ -1,7 +1,35 @@
-
-
 body {
   background-color: #3D3D3D;
+  height: 100%;
+  height: 100vh;
+}
+
+.h1 {
+  font-size: 80px;
+  color: #30D5C8;
+  margin-bottom: 20px;
+  size: 20px;
+  color: #30D5C8;
+}
+
+button {
+color: #30D5C8;
+background-color: #3D3D3D;
+}
+
+#navbutton {
+  float: right;
+  margin-right: 20px;
+  margin-top: 10px; 
+  padding:10px 15px;
+  border-radius: 5px;
+  border-color: white;
+  border-width: 1px;
+}
+
+#body {
+  clear: both;
+  
 }
 
 .h1 {
