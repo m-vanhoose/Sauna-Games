@@ -1,19 +1,14 @@
-<h1 class="h1">Catalog Page
-    <div> 
-        <Img src="/public/Video Game Cover Art/EGS_Cyberpunk2077_CDPROJEKTRED_S1_03_2560x1440-359e77d3cd0a40aebf3bbc130d14c5c7.jpg">
-    </div>
-</h1>
+<h1 class="h1">Catalog</h1>
 
 {{#if games.length}}
 
 <div class="columns is-multiline">
     {{#each games as |game| }}    
-    <div class="column is-half" id="game-card">
+   <a href="/game/{{game.id}}" class="column is-half" id="game-card">
+   <img src="/game/image/{{game.image}}" alt="{{game.title}}" class="game-image">
         <h1 class="game-title">{{game.title}}</h1>
-        <p>{{game.description}}</p>
-        <p>{{game.release_date}}</p>
-        <p>${{game.price}}</p>
-    </div >
+        <p>{{game.price}}</p>
+    </a >
     
     {{/each}}
     {{else}}
