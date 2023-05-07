@@ -4,8 +4,8 @@
 
 <div class="columns is-multiline">
     {{#each games as |game| }}    
-   <a href="/game/{{game.id}}" class="column is-half" id="game-card">
-   <img src="/game/image/{{game.image}}" alt="{{game.title}}" class="game-image">
+   <a href="/game/${game.id}" class="column is-half" id="game-card">
+   <img src="{{game.image}}" alt="{{game.title}}" class="game-image">
         <h1 class="game-title">{{game.title}}</h1>
         <p>{{game.price}}</p>
     </a >
