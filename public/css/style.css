@@ -1,3 +1,9 @@
+h1 {
+  font-size: 80px;
+  color: #30D5C8;
+  margin-bottom: 20px;
+}
+
 body {
   background-color: #3D3D3D;
   height: 100%;
@@ -27,19 +33,13 @@ background-color: #3D3D3D;
 
 #body {
   clear: both;
-  
-}
-
-.h1 {
-  font-size: 80px;
-  color: #30D5C8;
-  margin-bottom: 20px;
 }
 
 #game-card {
   border: 1px solid white;
   padding: 10px;
   color: #FCFEDA;
+  margin-top: 15px;
 }
 
 .game-title {
