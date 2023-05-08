@@ -12,7 +12,6 @@ router.get('/library', async (req, res) => {
 });
 
 
-
 router.get('/catalog', async (req, res) => {
   try {
     const gameData = await Game.findAll();
