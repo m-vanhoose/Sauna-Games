@@ -26,7 +26,7 @@ const gameData = [
       "title": "Factorio",
       "description": "Factorio is a game about building and creating automated factories to produce items of increasing complexity, within an infinite 2D world. Use your imagination to design your factory, combine simple elements into ingenious structures, and finally protect it from the creatures who don't really like you.",
       "release_date": "Aug 14, 2020",
-      "price": "$35.00",
+      "price": "$34.99",
       "image": "/cover_art/factorio.jpg"
     },
     {
