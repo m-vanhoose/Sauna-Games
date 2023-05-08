@@ -1,7 +1,9 @@
-h1 {
-  font-size: 80px;
+#title {
+  font-size: 40px;
   color: #30D5C8;
   margin-bottom: 20px;
+  margin-left: 10px;
+  float: left;
 }
 
 body {
