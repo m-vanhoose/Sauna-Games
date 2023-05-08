@@ -6,13 +6,11 @@ router.get('/', async (req, res) => {
   res.render("login")
 });
 
-router.get('/catalog', async (req, res) => {
-  res.render("catalog")
-});
 
 router.get('/library', async (req, res) => {
   res.render("library")
 });
+
 
 router.get('/catalog', async (req, res) => {
   try {
