@@ -2,10 +2,7 @@ const User = require('./User');
 const Game = require('./Game');
 const Post = require('./post');
 
-// User.hasMany(Game, {
-//   foreignKey: 'user_id',
-//   onDelete: 'CASCADE'
-// });
+
 
 // Game.belongsToMany(User, {
 //   foreignKey: 'user_id'

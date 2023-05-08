@@ -21,6 +21,62 @@ router.get('/catalog', async (req, res) => {
       res.render("catalog", {error})}
 });
 
+router.get('/library', withAuth, async (req, res) => {
+  try {
+    const user = await User.findByPk(req.session.user.id, {
+      include: [{ model: Game }],
+    });
+
+    if (!user) {
+      res.status(404).json({ message: 'User not found' });
+      return;
+    }
+
+    const savedGames = user.Games.map((game) => game.get({ plain: true }));
+
+    res.render('library', {
+      games: savedGames,
+      logged_in: true
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+
+router.post('/library', withAuth, async (req, res) => {
+  try {
+    const { id } = req.body;
+
+    const user = await User.findByPk(req.session.user.id);
+
+    if (!user) {
+      res.status(404).json({ message: 'User not found' });
+      return;
+    }
+
+    const savedGame = await user.getGames({
+      where: { id },
+    });
+
+    if (savedGame.length) {
+      res.status(400).json({ message: 'Game already saved' });
+      return;
+    }
+    
+    if (savedGame.length === 0) {
+      res.status(400).json({ message: 'No saved games' });
+      return;
+    }
+
+    await user.addGame(id);
+
+    res.status(200).json({ message: 'Game saved successfully' });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 // router.get('/game/:id', async (req, res) => {
 //   try {
 //     const gameData = await Game.findByPk(req.params.id, {
@@ -52,6 +108,7 @@ router.get('/game/:id', async (req, res) => {
 })
 
 
+<<<<<<< HEAD
 // Use withAuth middleware to prevent access to route
 // router.get('/profile', withAuth, async (req, res) => {
 //   try {
@@ -60,6 +117,16 @@ router.get('/game/:id', async (req, res) => {
 //       attributes: { exclude: ['password'] },
 //       include: [{ model: Game }],
 //     });
+=======
+
+router.get('/profile', withAuth, async (req, res) => {
+  try {
+    
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ['password'] },
+      include: [{ model: Game }],
+    });
+>>>>>>> 199ba8f36296b1a46dc27538d86749a5d60076f4
 
 //     const user = userData.get({ plain: true });
 
