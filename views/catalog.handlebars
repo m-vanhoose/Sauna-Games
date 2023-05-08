@@ -1,14 +1,14 @@
-<h1>Catalog Page</h1>
+<h1 class="h1">Catalog</h1>
 
 {{#if games.length}}
 
 <div class="columns is-multiline">
     {{#each games as |game| }}    
-    <div class="column is-half" id="game-card">
-        {{game.title}}
-        {{game.description}}
-         {{game.release_date}} 
-    </div >
+   <a href="/game/{{game.id}}" class="column is-half" id="game-card">
+   <img src="{{game.image}}" alt="{{game.title}}" class="game-image">
+        <h1 class="game-title">{{game.title}}</h1>
+        <p>{{game.price}}</p>
+    </a>
     
     {{/each}}
     {{else}}

@@ -1,4 +1,3 @@
 DROP DATABASE IF EXISTS game_db;
 CREATE DATABASE game_db;
 
-CREATE TABLE games;
