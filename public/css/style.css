@@ -10,8 +10,10 @@ body {
   height: 100vh;
 }
 
-#title {
-  float: left;
+.h1 {
+  font-size: 80px;
+  color: #30D5C8;
+  margin-bottom: 20px;
   size: 20px;
   color: #30D5C8;
 }
