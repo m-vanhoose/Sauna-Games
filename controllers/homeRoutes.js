@@ -6,12 +6,12 @@ router.get('/', async (req, res) => {
   res.render("login")
 });
 
-router.get('/homepage', async (req, res) => {
+router.get('/catalog', async (req, res) => {
   res.render("catalog")
 });
 
-router.get('/profile', async (req, res) => {
-  res.render("profile")
+router.get('/library', async (req, res) => {
+  res.render("library")
 });
 
 router.get('/catalog', async (req, res) => {
@@ -25,7 +25,7 @@ router.get('/catalog', async (req, res) => {
 
 router.get('/library', withAuth, async (req, res) => {
   try {
-    const user = await User.findByPk(req.session.user_id, {
+    const user = await User.findByPk(req.session.user.id, {
       include: [{ model: Game }],
     });
 
@@ -48,9 +48,9 @@ router.get('/library', withAuth, async (req, res) => {
 
 router.post('/library', withAuth, async (req, res) => {
   try {
-    const { game_id } = req.body;
+    const { id } = req.body;
 
-    const user = await User.findByPk(req.session.user_id);
+    const user = await User.findByPk(req.session.user.id);
 
     if (!user) {
       res.status(404).json({ message: 'User not found' });
@@ -58,15 +58,20 @@ router.post('/library', withAuth, async (req, res) => {
     }
 
     const savedGame = await user.getGames({
-      where: { id: game_id },
+      where: { id },
     });
 
     if (savedGame.length) {
       res.status(400).json({ message: 'Game already saved' });
       return;
     }
+    
+    if (savedGame.length === 0) {
+      res.status(400).json({ message: 'No saved games' });
+      return;
+    }
 
-    await user.addGame(game_id);
+    await user.addGame(id);
 
     res.status(200).json({ message: 'Game saved successfully' });
   } catch (err) {

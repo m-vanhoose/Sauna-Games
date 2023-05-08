@@ -13,8 +13,8 @@
 <body>
   <div>
     <p id="title" class="is-size-2">Sauna Games</p>
-      <button href="/profile" id="navbutton">My Page</button>
-      <button href='/catalog' id="navbutton">Store</button>
+      <button href="/library" id="navbutton">My Page</button>
+      <button href='/homepage' id="navbutton">Store</button>
   </div>
   <div id="body">
     {{{ body }}}
@@ -22,13 +22,12 @@
       <div class="flex-column justify-space-around">
     <header class="display-flex justify-space-between align-center p-2">
       <h1>
-        <span role="img" aria-label="money">💸</span>
-        <a href="/">Fund My Project!</a>
+      
       </h1>
       <nav>
         <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
-        <a href="/profile">profile</a> |
+        <a href="/library">library</a> |
         <button class="no-button" id="logout">logout</button>
         {{else}}
         <a href="/login">login</a>
