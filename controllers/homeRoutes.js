@@ -108,7 +108,6 @@ router.get('/game/:id', async (req, res) => {
 })
 
 
-<<<<<<< HEAD
 // Use withAuth middleware to prevent access to route
 // router.get('/profile', withAuth, async (req, res) => {
 //   try {
@@ -117,16 +116,6 @@ router.get('/game/:id', async (req, res) => {
 //       attributes: { exclude: ['password'] },
 //       include: [{ model: Game }],
 //     });
-=======
-
-router.get('/profile', withAuth, async (req, res) => {
-  try {
-    
-    const userData = await User.findByPk(req.session.user_id, {
-      attributes: { exclude: ['password'] },
-      include: [{ model: Game }],
-    });
->>>>>>> 199ba8f36296b1a46dc27538d86749a5d60076f4
 
 //     const user = userData.get({ plain: true });
 
