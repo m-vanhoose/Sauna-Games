@@ -1,22 +1,15 @@
-<body>
-  <div class="container">
-    <div class="columns">
-      <div class="column is-two-thirds">
-        <h2>Saved Game Library</h2>
-        {{#if games.length}}
-        <div class="columns is-multiline">
-          {{#each games as |game|}}
-          <div class="column is-half" id="game-card">
-            <h3>{{game.title}}</h3>
-            <p>{{game.description}}</p>
-            <p>Release Date: {{game.release_date}}</p>
-          </div>
-          {{/each}}
-        </div>
-        {{else}}
-        <p>No saved games found.</p>
-        {{/if}}
+<h2>Saved Game Library</h2>
+
+{{#if games.length}}
+  <div class="columns is-multiline">
+    {{#each games}}
+      <div class="column is-half" id="game-card">
+        <h3>{{title}}</h3>
+        <p>{{description}}</p>
+        <p>Release Date: {{release_date}}</p>
       </div>
-    </div>
+    {{/each}}
   </div>
-</body>
+{{else}}
+  <p>No saved games found.</p>
+{{/if}}
