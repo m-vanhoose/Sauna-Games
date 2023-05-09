@@ -4,9 +4,11 @@
   <div class="columns is-multiline">
     {{#each games}}
       <div class="column is-half" id="game-card">
+        <img src="{{game.image}}" alt="{{game.title}}" class="game-image">
         <h3>{{game.title}}</h3>
         <p>{{game.description}}</p>
         <p>Release Date: {{game.release_date}}</p>
+        <p>Price: {{game.price}}</p>
       </div>
     {{/each}}
   </div>

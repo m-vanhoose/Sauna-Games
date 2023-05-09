@@ -7,9 +7,9 @@ router.get('/', async (req, res) => {
 });
 
 
-router.get('/library', async (req, res) => {
-  res.render("library")
-});
+// router.get('/library', async (req, res) => {
+//   res.render("library")
+// });
 
 
 router.get('/catalog', async (req, res) => {
@@ -18,12 +18,13 @@ router.get('/catalog', async (req, res) => {
     const games = gameData.map((game) => game.get({plain:true}))
     res.render("catalog", { games})}
       catch (error) {
+        console.log(error)
       res.render("catalog", {error})}
 });
 
 router.get('/library', withAuth, async (req, res) => {
   try {
-    const user = await User.findByPk(req.session.user.id, {
+    const user = await User.findByPk(req.session.user_id, {
       include: [{ model: Game }],
     });
 
@@ -39,6 +40,7 @@ router.get('/library', withAuth, async (req, res) => {
       logged_in: true
     });
   } catch (err) {
+    console.log(err)
     res.status(500).json(err);
   }
 });
@@ -48,7 +50,7 @@ router.post('/library', withAuth, async (req, res) => {
   try {
     const { id } = req.body;
 
-    const user = await User.findByPk(req.session.user.id);
+    const user = await User.findByPk(req.session.user_id);
 
     if (!user) {
       res.status(404).json({ message: 'User not found' });
@@ -73,6 +75,7 @@ router.post('/library', withAuth, async (req, res) => {
 
     res.status(200).json({ message: 'Game saved successfully' });
   } catch (err) {
+    console.log(err)
     res.status(500).json(err);
   }
 });

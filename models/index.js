@@ -4,9 +4,14 @@ const Post = require('./post');
 
 
 
-// Game.belongsToMany(User, {
-//   foreignKey: 'user_id'
-// });
+Game.belongsToMany(User, {
+    through: "gameUsers",
+ // foreignKey: 'user_id',
+});
+
+User.hasMany(Game, {
+
+})
 
 // User.hasMany( Post, {
 //   foreignKey: 'user_id',

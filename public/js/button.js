@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
     const saveGame = document.getElementById('saveGame');
     saveGame.addEventListener('click', () => {
-      // Get the game ID from the element or any other source
-      const gameId = saveGame.dataset.gameId;
-  
+      console.log(saveGame)
+      const gameId = saveGame.dataset.gameid;
+      console.log(gameId)
       const payload = { id: gameId };
   
       fetch('/library', {
