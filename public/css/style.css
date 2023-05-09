@@ -4,17 +4,43 @@ body {
   height: 100vh;
 }
 
-.h1 {
-  font-size: 80px;
-  color: #30D5C8;
-  margin-bottom: 20px;
-  size: 20px;
-  color: #30D5C8;
+img {
+  height: 100%;
+  max-width: 100%;
 }
 
 button {
-color: #30D5C8;
-background-color: #3D3D3D;
+  color: #30D5C8;
+  background-color: #3D3D3D;
+}
+
+.h1 {
+  font-size: 80px;
+  color: #30D5C8;
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  size: 20px;
+}
+
+.game-title {
+  color: #30D5C8;
+  font-size: 45px;
+}
+
+.game-description {
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  text-align: left;
+  color: #FCFEDA;
+  font-size: 30px;
+}
+
+.price {
+  font-size: 30px;
+  margin-left: 10px;
+  color: #FCFEDA;
 }
 
 #navbutton {
@@ -27,24 +53,101 @@ background-color: #3D3D3D;
   border-width: 1px;
 }
 
-#body {
-  clear: both;
-  
+#catalog {
+  height: 0%;
 }
 
-.h1 {
-  font-size: 80px;
-  color: #30D5C8;
-  margin-bottom: 20px;
+#body {
+  background-color: #3D3D3D;
+}
+
+#flex-catalog {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
 }
 
 #game-card {
-  border: 1px solid white;
-  padding: 10px;
-  color: #FCFEDA;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-flow: column;
+  height: 100%;
+  margin: 15px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 5px;
+  width: 40%;
 }
 
-.game-title {
+#link {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+#sub-game-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  gap: 15px;
+}
+
+#img-card {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-grow: 1;
+  width: 100%;
+  height: 100%;
+}
+
+#game-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
+}
+
+#details-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  width: 98%;
+  gap: 10px;
+}
+
+#game-page-title {
+  margin: 10px;
+}
+
+#game-page-img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  width: 50%;
+  max-height: 40vh;
+  object-fit: contain;
+}
+
+#game-page-price {
   color: #30D5C8;
-  font-size: 35px;
+}
+
+#button-container {
+  text-align: right;
+}
+
+#library-button {
+  margin-top: 5px;
+  margin-right: 10px;
+  width: 150px;
+  height: 75px;
+  font-size: 20px;
 }
