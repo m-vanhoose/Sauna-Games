@@ -120,6 +120,15 @@ text-align: center;
 font-size: 1.5rem;
 }
 
+#game-library {
+  font-size: 40px;
+  color: #30D5C8;
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  size: 20px;
+}
+
 #title {
   font-size: 40px;
   color: #30D5C8;
@@ -252,7 +261,7 @@ font-size: 1.5rem;
   padding-bottom: 20px;
 }
 
-#library-button {
+.library-button {
   margin-top: 5px;
   margin-right: 10px;
   width: 150px;

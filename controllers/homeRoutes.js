@@ -7,9 +7,9 @@ router.get('/', async (req, res) => {
 });
 
 
-router.get('/library', async (req, res) => {
-  res.render("library")
-});
+// router.get('/library', async (req, res) => {
+//   res.render("library")
+// });
 
 
 router.get('/catalog', async (req, res) => {
@@ -18,27 +18,29 @@ router.get('/catalog', async (req, res) => {
     const games = gameData.map((game) => game.get({plain:true}))
     res.render("catalog", {games})}
       catch (error) {
+        console.log(error)
       res.render("catalog", {error})}
 });
 
 router.get('/library', withAuth, async (req, res) => {
   try {
-    const user = await User.findByPk(req.session.user.id, {
+    const user = await User.findByPk(req.session.user_id, {
       include: [{ model: Game }],
     });
-
+console.log(user)
     if (!user) {
       res.status(404).json({ message: 'User not found' });
       return;
     }
 
-    const savedGames = user.Games.map((game) => game.get({ plain: true }));
+    const savedGames = user.games.map((game) => game.get({ plain: true }));
 
     res.render('library', {
       games: savedGames,
       logged_in: true
     });
   } catch (err) {
+    console.log(err)
     res.status(500).json(err);
   }
 });
@@ -48,7 +50,7 @@ router.post('/library', withAuth, async (req, res) => {
   try {
     const { id } = req.body;
 
-    const user = await User.findByPk(req.session.user.id);
+    const user = await User.findByPk(req.session.user_id);
 
     if (!user) {
       res.status(404).json({ message: 'User not found' });
@@ -59,20 +61,21 @@ router.post('/library', withAuth, async (req, res) => {
       where: { id },
     });
 
-    if (savedGame.length) {
+    if (savedGame.length > 0) {
       res.status(400).json({ message: 'Game already saved' });
       return;
     }
     
-    if (savedGame.length === 0) {
-      res.status(400).json({ message: 'No saved games' });
-      return;
-    }
+    // if (savedGame.length === 0) {
+    //   res.status(400).json({ message: 'No saved games' });
+    //   return;
+    // }
 
     await user.addGame(id);
 
     res.status(200).json({ message: 'Game saved successfully' });
   } catch (err) {
+    console.log(err)
     res.status(500).json(err);
   }
 });
