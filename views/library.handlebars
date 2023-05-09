@@ -1,15 +1,27 @@
 <h2>Saved Game Library</h2>
 
 {{#if games.length}}
-  <div class="columns is-multiline">
-    {{#each games}}
-      <div class="column is-half" id="game-card">
-        <h3>{{title}}</h3>
-        <p>{{description}}</p>
-        <p>Release Date: {{release_date}}</p>
-      </div>
+
+<div id="flex-catalog">
+    {{#each games as |game| }}
+    <div id="game-card">
+        <a id="link" href="/game/{{game.id}}">
+        <div id="sub-game-card">
+            <div id = "img-card">
+                <img id="game-img" src="{{game.image}}" alt="{{game.title}}">
+            </div>
+            <div id = "details-card">
+                <h1 class="game-title">{{game.title}}</h1>
+                <p class="price">{{game.price}}</p>
+            </div>
+        </div>
+        </a>
+    </div>
+    
     {{/each}}
-  </div>
-{{else}}
-  <p>No saved games found.</p>
+    {{else}}
+    <p> Coming soon! </p>
+</div>
+
 {{/if}}
+</div>
