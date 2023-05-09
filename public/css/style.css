@@ -9,16 +9,29 @@ button {
   background-color: #3D3D3D;
 }
 
-#logo {
-  width: 100px;
-  height: 100px;
+input {
+  font-size: 1.3rem;
+  text-align: center;
+  background-color: #434242;
+  color: #FCFEDA;
 }
 
-#title {
-  text-align: center;
-  display: block;
-  width: 100%;
+
+h2 {
+  color: #FCFEDA;
+}
+
+.form-group {
+  color: #FCFEDA;
+} 
+
+.h1 {
+  font-size: 80px;
   color: #30D5C8;
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  size: 20px;
 }
 
 .bgImage-container {
@@ -57,31 +70,6 @@ button {
   border-radius: .5rem;
 }
 
-input {
-  font-size: 1.3rem;
-  text-align: center;
-  background-color: #434242;
-  color: #FCFEDA;
-}
-
-
-h2 {
-  color: #FCFEDA;
-}
-
-.form-group {
-  color: #FCFEDA;
-} 
-
-.h1 {
-  font-size: 80px;
-  color: #30D5C8;
-  margin-top: 20px;
-  margin-left: 20px;
-  margin-bottom: 20px;
-  size: 20px;
-}
-
 .game-title {
   color: #30D5C8;
   font-size: 45px;
@@ -100,6 +88,18 @@ h2 {
   font-size: 30px;
   margin-left: 10px;
   color: #FCFEDA;
+}
+
+#logo {
+  margin-top: 5px;
+  margin-left: 10px;
+  height: 100px;
+}
+
+#navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 #navbutton {
@@ -181,6 +181,15 @@ h2 {
   gap: 10px;
 }
 
+#game-page-details-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  width: 98%;
+  gap: 20px;
+}
+
 #game-page-title {
   margin: 10px;
 }
@@ -201,6 +210,7 @@ h2 {
 
 #button-container {
   text-align: right;
+  padding-bottom: 20px;
 }
 
 #library-button {
@@ -209,4 +219,43 @@ h2 {
   width: 150px;
   height: 75px;
   font-size: 20px;
+}
+
+@media only screen and (max-width: 1200px) {
+  #game-card {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 997px) {
+  #game-page-details-card {
+    display: block;
+    width: 100%;
+  }
+
+  .game-description {
+    width: 90%;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size: 25px;
+  }
+
+  #game-page-price {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  #button-container {
+    text-align: center;
+  }
+
+  #library-button {
+    margin: 10px;
+  }
 }
