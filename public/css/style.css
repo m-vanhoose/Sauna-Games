@@ -25,33 +25,28 @@ body {
 }
 
 .bgImage-container {
-  background-image: url(../images/loginPageImg.jpeg);  
+  background-image: url(../images/loginPageImg.jpeg);
   height: 55rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.col-md-6 {
-  background-color: #3D3D3D;
-  padding: 1.5rem;
-  padding-bottom: 4.2rem;
-  padding-top: 3rem;
-  float: left;
-  margin-top: 18rem;
-  margin-left: 26rem;
-  font-size: 2.5rem;
-  border: .25rem solid #30D5C8;
-  border-radius: .5rem;
-
+.grid-container {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ flex-wrap: wrap;
 }
 
-.col-md-8 {
+.grid-item {
   background-color: #3D3D3D;
-  padding: 1.75rem;
-  float: right;
-  margin-top: 18rem;
-  margin-right: 26rem;
-  font-size: 2.5rem;
   border: .25rem solid #30D5C8;
-  border-radius: .5rem;
+  border-radius: 5px;
+  height: 300px;
+  width: 500px;
+  margin: 30px;
+  display: grid;
 }
 
 input {
@@ -62,15 +57,17 @@ input {
 }
 
 
-h2 {
-  color: #FCFEDA;
+.h2 {
+  color: #FCFEDA; 
+  display: flex;
+  justify-self: center;
+  align-self: center;
+  font-size: 30px;
 }
 
 .form-group {
   color: #FCFEDA;
 } 
-
-
 
 .h1 {
   font-size: 80px;
@@ -80,12 +77,35 @@ h2 {
   color: #30D5C8;
 }
 
+.btn-form {
+  display: grid;
+}
+
+.submit {
+  margin-top: 20px;
+  justify-self: center;
+  align-self: center;
+}
+
+.entries {
+display: grid ;
+}
+
+.entry {
+justify-self: end;
+margin-right: 70px;
+}
+
+label {
+  font-size: 25px;
+}
+
 button {
-color: #30D5C8;
-background-color: #3D3D3D;
-padding: .5rem 1rem;
-text-align: center;
-font-size: 1.5rem;
+  color: #30D5C8;
+  background-color: #3D3D3D;
+  padding: .5rem 1rem;
+  text-align: center;
+  font-size: 1.5rem;
 }
 
 #navbutton {
