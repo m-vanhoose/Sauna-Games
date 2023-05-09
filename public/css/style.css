@@ -1,3 +1,17 @@
+#title {
+  font-size: 40px;
+  color: #30D5C8;
+  margin-bottom: 20px;
+  margin-left: 10px;
+  float: left;
+}
+
+#logo {
+  margin-top: 5px;
+  margin-left: 10px;
+  height: 100px;
+}
+
 body {
   background-color: #3D3D3D;
   height: 100%;
@@ -16,9 +30,21 @@ input {
   color: #FCFEDA;
 }
 
-
-h2 {
+.game-description {
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  text-align: left;
   color: #FCFEDA;
+  font-size: 30px;
+}
+
+.h2 {
+  color: #FCFEDA; 
+  display: flex;
+  justify-self: center;
+  align-self: center;
+  font-size: 30px;
 }
 
 .form-group {
@@ -35,39 +61,51 @@ h2 {
 }
 
 .bgImage-container {
-  background-image: url(../images/loginPageImg.jpeg);  
+  background-image: url(../images/loginPageImg.jpeg);
   height: 55rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.btn {
-  padding: .5rem 1rem;
-  text-align: center;
-  font-size: 1.5rem;
+.grid-container {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ flex-wrap: wrap;
 }
 
-.col-md-6 {
+.grid-item {
   background-color: #3D3D3D;
-  padding: 1.5rem;
-  padding-bottom: 4.2rem;
-  padding-top: 3rem;
-  float: left;
-  margin-top: 18rem;
-  margin-left: 26rem;
-  font-size: 2.5rem;
   border: .25rem solid #30D5C8;
-  border-radius: .5rem;
-
+  border-radius: 5px;
+  height: 300px;
+  width: 500px;
+  margin: 30px;
+  display: grid;
 }
 
-.col-md-8 {
-  background-color: #3D3D3D;
-  padding: 1.75rem;
-  float: right;
-  margin-top: 18rem;
-  margin-right: 26rem;
-  font-size: 2.5rem;
-  border: .25rem solid #30D5C8;
-  border-radius: .5rem;
+.btn-form {
+  display: grid;
+}
+
+.submit {
+  margin-top: 20px;
+  justify-self: center;
+  align-self: center;
+}
+
+.entries {
+display: grid ;
+}
+
+.entry {
+justify-self: end;
+margin-right: 70px;
+}
+
+label {
+  font-size: 25px;
 }
 
 .game-title {
@@ -75,13 +113,8 @@ h2 {
   font-size: 45px;
 }
 
-.game-description {
-  margin-top: 20px;
-  margin-left: 20px;
-  margin-bottom: 20px;
-  text-align: left;
+h2 {
   color: #FCFEDA;
-  font-size: 30px;
 }
 
 .price {
@@ -90,10 +123,16 @@ h2 {
   color: #FCFEDA;
 }
 
-#logo {
-  margin-top: 5px;
-  margin-left: 10px;
-  height: 100px;
+
+
+
+
+button {
+color: #30D5C8;
+background-color: #3D3D3D;
+padding: .5rem 1rem;
+text-align: center;
+font-size: 1.5rem;
 }
 
 #navbar {
