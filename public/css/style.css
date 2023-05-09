@@ -4,15 +4,71 @@ body {
   height: 100vh;
 }
 
-img {
-  height: 100%;
-  max-width: 100%;
-}
-
 button {
   color: #30D5C8;
   background-color: #3D3D3D;
+  padding: .5rem 1rem;
+  text-align: center;
+  font-size: 1.5rem;
 }
+
+#logo {
+  width: 100px;
+  height: 100px;
+}
+
+#title {
+  text-align: center;
+  display: block;
+  width: 100%;
+  color: #30D5C8;
+}
+
+.bgImage-container {
+  background-image: url(../images/loginPageImg.jpeg);  
+  height: 55rem;
+}
+
+.col-md-6 {
+  background-color: #3D3D3D;
+  padding: 1.5rem;
+  padding-bottom: 4.2rem;
+  padding-top: 3rem;
+  float: left;
+  margin-top: 18rem;
+  margin-left: 26rem;
+  font-size: 2.5rem;
+  border: .25rem solid #30D5C8;
+  border-radius: .5rem;
+
+}
+
+.col-md-8 {
+  background-color: #3D3D3D;
+  padding: 1.75rem;
+  float: right;
+  margin-top: 18rem;
+  margin-right: 26rem;
+  font-size: 2.5rem;
+  border: .25rem solid #30D5C8;
+  border-radius: .5rem;
+}
+
+input {
+  font-size: 1.3rem;
+  text-align: center;
+  background-color: #434242;
+  color: #FCFEDA;
+}
+
+
+h2 {
+  color: #FCFEDA;
+}
+
+.form-group {
+  color: #FCFEDA;
+} 
 
 .h1 {
   font-size: 80px;
