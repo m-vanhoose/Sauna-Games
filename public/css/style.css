@@ -7,9 +7,6 @@ body {
 button {
   color: #30D5C8;
   background-color: #3D3D3D;
-  padding: .5rem 1rem;
-  text-align: center;
-  font-size: 1.5rem;
 }
 
 #logo {
@@ -27,6 +24,12 @@ button {
 .bgImage-container {
   background-image: url(../images/loginPageImg.jpeg);  
   height: 55rem;
+}
+
+.btn {
+  padding: .5rem 1rem;
+  text-align: center;
+  font-size: 1.5rem;
 }
 
 .col-md-6 {
