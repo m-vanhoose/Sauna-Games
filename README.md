@@ -19,6 +19,17 @@ And more!
 
 This project is designed to help users discover new games and make informed decisions about which ones to play. Whether you're a casual gamer or a hardcore enthusiast, this platform provides a comprehensive resource for all your gaming needs.
 
+## Sauna Games Demo
+
+### Login Page
+![Login Page](/public/images/Login.PNG)
+### Catalog
+![Catalog](/public/images/Catalog.PNG)
+### Game Page
+![Game Page](/public/images/Game.PNG)
+### Library
+![Library](/public/images/Library.PNG)
+
  [Here](https://damp-earth-65412.herokuapp.com/ "Sauna Games") is our deployed page where you can check it out.
 
 ## Colaborators
@@ -28,4 +39,3 @@ This project is designed to help users discover new games and make informed deci
 * Andrew Jester, [Destroyer47](https://github.com/Destroer47 "github")
 * Omar Reynosa, [oreynosa12](https://github.com/oreynosa12 "github")
 * Brett VanHoose, [m-vanhoose]( https://github.com/m-vanhoose"github")
-
