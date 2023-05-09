@@ -8,7 +8,7 @@ const seedGames = require('./gameData')
 const seedUser = require('./userData')
 
 const seedDatabase = async () => {
-  await sequelize.sync({ force: true })
+  await sequelize.sync({ force: false })
   console.log('\n -----DATABASE SYNCHED------\n')
 
   await seedGames()

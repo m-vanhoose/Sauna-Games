@@ -9,9 +9,7 @@ Game.belongsToMany(User, {
  // foreignKey: 'user_id',
 });
 
-User.hasMany(Game, {
-
-})
+User.hasMany(Game)
 
 // User.hasMany( Post, {
 //   foreignKey: 'user_id',

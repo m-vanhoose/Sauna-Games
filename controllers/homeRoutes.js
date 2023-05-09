@@ -27,13 +27,13 @@ router.get('/library', withAuth, async (req, res) => {
     const user = await User.findByPk(req.session.user_id, {
       include: [{ model: Game }],
     });
-
+console.log(user)
     if (!user) {
       res.status(404).json({ message: 'User not found' });
       return;
     }
 
-    const savedGames = user.Games.map((game) => game.get({ plain: true }));
+    const savedGames = user.games.map((game) => game.get({ plain: true }));
 
     res.render('library', {
       games: savedGames,
@@ -61,15 +61,15 @@ router.post('/library', withAuth, async (req, res) => {
       where: { id },
     });
 
-    if (savedGame.length) {
+    if (savedGame.length > 0) {
       res.status(400).json({ message: 'Game already saved' });
       return;
     }
     
-    if (savedGame.length === 0) {
-      res.status(400).json({ message: 'No saved games' });
-      return;
-    }
+    // if (savedGame.length === 0) {
+    //   res.status(400).json({ message: 'No saved games' });
+    //   return;
+    // }
 
     await user.addGame(id);
 
