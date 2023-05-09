@@ -252,7 +252,7 @@ font-size: 1.5rem;
   padding-bottom: 20px;
 }
 
-#library-button {
+.library-button {
   margin-top: 5px;
   margin-right: 10px;
   width: 150px;
