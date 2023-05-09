@@ -1,10 +1,13 @@
-<h1>{{game.title}}</h1>
+<h1 class="game-title" id="game-page-title">{{game.title}}</h1>
 
-<div><img src="{{game.image}}" alt="{{game.title}}"></div>
+<div><img id="game-page-img" src="{{game.image}}" alt="{{game.title}}"></div>
 
-<div>{{game.description}}</div>
-
-<button>Add to Library</button>
-
-<div>{{game.price}}</div>
+<div id= "game-page-details-card">
+    <div class="game-description">{{game.description}}</div>
+    <div class="price "id="game-page-price">{{game.price}}</div>
 </div>
+
+<div id="button-container">
+    <button id="library-button">Add to Library</button>
+</div>
+

@@ -1,14 +1,23 @@
+<div id="catalog">
 <h1 class="h1">Catalog</h1>
 
 {{#if games.length}}
 
-<div class="columns is-multiline">
-    {{#each games as |game| }}    
-   <a href="/game/{{game.id}}" class="column is-half" id="game-card">
-   <img src="{{game.image}}" alt="{{game.title}}" class="game-image">
-        <h1 class="game-title">{{game.title}}</h1>
-        <p>{{game.price}}</p>
-    </a>
+<div id="flex-catalog">
+    {{#each games as |game| }}
+    <div id="game-card">
+        <a id="link" href="/game/{{game.id}}">
+        <div id="sub-game-card">
+            <div id = "img-card">
+                <img id="game-img" src="{{game.image}}" alt="{{game.title}}">
+            </div>
+            <div id = "details-card">
+                <h1 class="game-title">{{game.title}}</h1>
+                <p class="price">{{game.price}}</p>
+            </div>
+        </div>
+        </a>
+    </div>
     
     {{/each}}
     {{else}}
@@ -16,6 +25,4 @@
 </div>
 
 {{/if}}
-
-
-    
+</div>
